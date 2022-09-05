@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://FnNode.gd" type="Script" id=1]
+
+[node name="FnNodeScene" type="GraphNode"]
+margin_right = 32.0
+margin_bottom = 30.0
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 16.0
+margin_top = 24.0
+margin_right = 74.0
+margin_bottom = 52.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+
+[node name="TextEdit" type="LineEdit" parent="VBoxContainer"]
+margin_right = 58.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+placeholder_text = "Name"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 28.0
+margin_right = 58.0
+margin_bottom = 28.0

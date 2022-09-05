@@ -9,24 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "GraphEdit",
-"class": "NodeGraph",
+"base": "GraphNode",
+"class": "FnNode",
 "language": "GDScript",
-"path": "res://NodeGraph.gd"
+"path": "res://FnNode.gd"
 } ]
 _global_script_class_icons={
-"NodeGraph": ""
+"FnNode": "res://icons/FnNode.svg"
 }
 
 [application]
 
 config/name="Neural Studio Node"
 run/main_scene="res://Main.tscn"
-config/icon="res://icon.png"
+run/low_processor_mode=true
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://godot_light_2px_border.tres"
 
 [physics]
 

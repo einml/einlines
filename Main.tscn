@@ -1,19 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://MainTabContainer.gd" type="Script" id=1]
-[ext_resource path="res://icons/icon_vcs_branches.svg" type="Texture" id=2]
+[ext_resource path="res://FnNodeScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MenuBar.gd" type="Script" id=3]
 [ext_resource path="res://MainWindow.gd" type="Script" id=4]
-[ext_resource path="res://NodeGraph.gd" type="Script" id=5]
-[ext_resource path="res://GraphNode.tscn" type="PackedScene" id=6]
-[ext_resource path="res://godot_dark_2px_border.tres" type="Theme" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="MainWindow" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 7 )
 script = ExtResource( 4 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -47,7 +43,7 @@ margin_left = 39.0
 margin_right = 79.0
 margin_bottom = 24.0
 text = "New"
-items = [ "Custom Node", ExtResource( 2 ), 0, false, false, 0, 0, null, "", false ]
+items = [ "Custom Node", null, 0, false, false, 0, 0, null, "", false ]
 switch_on_hover = true
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/VBoxContainer/MenuBar"]
@@ -109,24 +105,20 @@ script = ExtResource( 1 )
 [node name="Data" type="GraphEdit" parent="MarginContainer/VBoxContainer/MainTabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
 
-[node name="Control" parent="MarginContainer/VBoxContainer/MainTabContainer/Data" instance=ExtResource( 6 )]
-margin_left = 102.0
-margin_top = 181.0
-margin_right = 102.0
-margin_bottom = 181.0
+[node name="FnNodeScene" parent="MarginContainer/VBoxContainer/MainTabContainer/Data" instance=ExtResource( 2 )]
+margin_right = 116.0
+margin_bottom = 55.0
+mouse_filter = 1
 
-[node name="Control2" parent="MarginContainer/VBoxContainer/MainTabContainer/Data" instance=ExtResource( 6 )]
-margin_left = 517.0
-margin_top = 296.0
-margin_right = 517.0
-margin_bottom = 296.0
+[node name="FnNodeScene2" parent="MarginContainer/VBoxContainer/MainTabContainer/Data" instance=ExtResource( 2 )]
+margin_right = 116.0
+margin_bottom = 55.0
+mouse_filter = 1
 
 [node name="Model" type="GraphEdit" parent="MarginContainer/VBoxContainer/MainTabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 5 )
 
 [connection signal="toggled" from="MarginContainer/VBoxContainer/MenuBar/Light_Dark" to="." method="change_theme"]
